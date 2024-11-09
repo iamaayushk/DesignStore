@@ -1,0 +1,459 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* background-color: #000000; */
+}
+body{
+    background: #000000;
+}
+/* .header{
+    background:linear-gradient(to right ,#061830, #406078);
+    height: 80px;
+    z-index: 10;
+} */
+
+.header {
+    background: linear-gradient(to left, #061830, #36536a);
+    height: 80px;
+    z-index: 10;
+    /* position: fixed; */
+    top: 0; 
+    width: 100%; /* This will allow it to span the entire width */
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 35px;
+    color: white;
+    margin-right: auto;
+}
+.logo img {
+    max-height: 85px; /* Set the height for the logo image */
+    width: 142%; /* Maintain the aspect ratio */
+    cursor: pointer;
+}
+nav{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-right: 20%;
+    border-bottom: 10%;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+.cart-button {
+    /* background-color: #406078; Button background color */
+    color: #FFFFFF; /* Button text color */
+    padding: 10px 15px; 
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Make text bold */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.cart-button:hover {
+    background-color: #305e6a;
+ }
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(254, 253, 253);
+    font-weight: bold;
+    position: relative;
+}
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0; 
+    bottom: -5px; /* Adjusts the position of the line */
+    width: 100%; /* Full width of the link */
+    height: 2px; /* Thickness of the underline */
+    background-color: rgb(255, 255, 255); /* Color of the underline */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease; /* Animation */
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1); /* Fully visible on hover */
+}
+
+/* Responsive design */
+@media (max-width: 800px) {
+    .header {
+        height: auto;
+    }
+    nav {
+        flex-direction:column;
+        padding: 10px;
+    }
+    nav ul {
+        padding: 0;
+    }
+    nav ul li {
+        display: block;
+        padding: 10px ;
+    }
+}
+
+
+/***************CSS for Sliding and content 1 part***** */
+.content1 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* margin-top: 10px; */
+    background:linear-gradient(to right,#13141a , #212232);
+}
+
+.slider {
+    position: relative;
+    width: 80vw;   /* 65% of the viewport width */
+    height: 75vh;  /* 65% of the viewport height */
+    overflow: hidden;
+    border-radius: 5px; /* Optional: rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional: shadow effect */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fade 16s infinite;
+}
+
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 8s;
+}
+
+.slide:nth-child(4) {
+    animation-delay: 12s;
+}
+.slide:nth-child(5) {
+    animation-delay: 16s;
+}
+.slide:nth-child(6) {
+    animation-delay: 20s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover; /* Ensures image fills the box without distortion */
+}
+
+/* Keyframes for fade effect */
+@keyframes fade {
+    0%, 25% { opacity: 1; }
+    30%, 100% { opacity: 0; }
+}
+
+
+/*----------------Shop CSS--------------------- */
+.content2 {
+    width: 100%; /* Width of the content area */
+    height: auto; /* Allow height to adjust based on content */
+    background-color: black;
+    background: linear-gradient(to right, #0d2a33, #041e28);
+    padding: 20px 0; /* Add some padding for better layout */
+}
+
+.shop-title {
+    text-align: center; /* Center-align title */
+    font-size: 24px; /* Adjust font size */
+    color: #ffffff; /* Set text color */
+    margin-bottom: 50px; /* Space below the title */
+    padding-top: 50px; /* Space above the title */
+}
+
+.product-slider {
+    display: flex; /* Use flexbox for the product slider */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center the product slider */
+}
+
+.arrow {
+    background-color: transparent; 
+    border: none; 
+    color: #ffffff; 
+    font-size: 24px; 
+    cursor: pointer; 
+    padding: 10px; 
+}
+
+.product-container {
+    display: flex; 
+    overflow: hidden; 
+    scroll-behavior: smooth; 
+    width: 100%; 
+}
+
+.product {
+    position: relative; /* Allow absolute positioning for overlay */
+    text-align: center; /* Center-align text and button */
+    margin: 10px; /* Space between products */
+    flex: 0 0 20%; /* Adjust width for responsiveness */
+}
+
+.product-image {
+    position: relative; /* Position for overlay effect */
+    overflow: hidden; /* Hide overflow on zoom */
+}
+
+.zoom-image {
+    width: 100%; /* Adjust to fit the product container */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+.product-image:hover .zoom-image {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.3s ease; /* Fade-in effect */
+}
+
+.product-image:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.buy-button {
+    background-color: #406078; /* Button background color */
+    color: #FFFFFF; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    margin-top: 10px; /* Space above the button */
+}
+
+.buy-button:hover {
+    background-color: #305e6a; /* Darker shade on hover */
+}
+
+.desc {
+    color: #ffffff;
+    text-align: center;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+
+
+/* --------------Contact page styling--------- */
+/* General styling */
+.contact-page {
+    /* max-width: 1000px;    */
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+    
+    background: linear-gradient(to left,#43749a,#041e28);
+}
+
+.contact-title {
+    font-size: 36px;
+    color: #dbe0e4;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.contact-description {
+    color: #a1cbc9;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Layout for Contact Page */
+.contact-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-image {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-image img {
+    width: 35vw;
+    margin-top: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.contact-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-slider {
+    position: relative;
+    width: 35vw; /* Adjusted to your specifications */
+    margin-top: 50px; /* Adds space above the image slider */
+}
+
+.contact-slider .contact-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.contact-slider .contact-slide img {
+    width: 100%; /* The image will fill the width of the container */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+/* Active slide */
+.contact-slider .contact-slide.active {
+    opacity: 1; /* Show the active slide */
+}
+
+
+/* Contact Form Styling */
+.contact-form {
+    flex: 1;
+    background: linear-gradient(to bottom right, #2b8ab0,#456f8f );
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border: 1px solid #43749a;
+}
+
+.contact-form h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #ffffff;
+    transition: border 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border: 1px solid #406078;
+}
+
+.contact-form .submit-button {
+    background-color: #111e23;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.contact-form .submit-button:hover {
+    background-color: #02203e;
+}
+
+/* Footer Section */
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: linear-gradient(to right, #061830, #406078);
+    color: #fff;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a img {
+    width: 30px;
+    transition: transform 0.2s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ffffff;
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+}
+

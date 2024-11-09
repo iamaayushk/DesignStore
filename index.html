@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaditya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+    <nav>
+        <div class="logo"><img src="images/Main_Logo-removebg-preview.png" alt="logo"></div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#work">Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" class="cart-button">Cart</a></li>
+
+        </ul>
+    </nav>
+    </div>
+    
+    <div class="content1" id="home">
+            <div class="slider">
+            <div class="slide"><img src="images/1.jpg" alt="work1"></div>
+            <div class="slide"><img src="images/11.jpg" alt="work1"></div>
+            <div class="slide"><img src="images/2.jpg" alt="work2"></div>
+            <div class="slide"><img src="images/3.jpg" alt="work3"></div>
+            <div class="slide"><img src="images/4.jpg" alt="work4"></div>
+            <div class="slide"><img src="images/5.jpg" alt="work4"></div>
+            <div class="slide"><img src="images/6.jpg" alt="work4"></div>
+        </div>
+    </div>
+    <div class="content2" id="shop">
+        <h3 class="shop-title">You can buy</h3>
+        <div class="product-slider">
+            <button class="arrow left-arrow">&#8249;</button> <!-- Left arrow -->
+            <div class="product-container">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="images/5.jpg" alt="Art 1" class="zoom-image">
+                        <div class="overlay">
+                            <div class="description">Art 1 - $50</div>
+                            <button class="buy-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-image">
+                        <img src="images/8.jpg" alt="Art 2" class="zoom-image">
+                        <div class="overlay">
+                            <div class="description">Art 2 - $70</div>
+                            <button class="buy-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-image">
+                        <img src="images/7.jpg" alt="Art 3" class="zoom-image">
+                        <div class="overlay">
+                            <div class="description">Art 3 - $40</div>
+                            <button class="buy-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-image">
+                        <img src="images/2.jpg" alt="Art 4" class="zoom-image">
+                        <div class="overlay">
+                            <div class="description">Art 4 - $60</div>
+                            <button class="buy-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-image">
+                        <img src="images/1.jpg" alt="Art 5" class="zoom-image">
+                        <div class="overlay">
+                            <div class="description">Art 5 - $60</div>
+                            <button class="buy-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-image">
+                        <img src="images/11.jpg" alt="Art 6" class="zoom-image">
+                        <div class="overlay">
+                            <div class="description">Art 6 - $60</div>
+                            <button class="buy-button">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <button class="arrow right-arrow">&#8250;</button> <!-- Right arrow -->
+        </div>
+        <h4 class="desc">Find Your Perfect Piece Today</h4>
+    </div>
+    
+
+    <div class="contact-page" id="contact">
+        <h2 class="contact-title">Get in Touch</h2>
+        <p class="contact-description">Reach out with any questions or requests!</p>
+        
+        <div class="contact-container">
+            <!-- Image Section -->
+            <div class="contact-slider">
+                <div class="contact-slide"><img src="images/12.jpg" alt="Contact Image 1"></div>
+                <div class="contact-slide"><img src="images/11.jpg" alt="Contact Image 1"></div>
+                <div class="contact-slide"><img src="images/2.jpg" alt="Contact Image 1"></div>
+                <div class="contact-slide"><img src="images/3.jpg" alt="Contact Image 1"></div>
+                <div class="contact-slide"><img src="images/4.jpg" alt="Contact Image 1"></div>
+                <div class="contact-slide"><img src="images/10.jpg" alt="Contact Image 1"></div>
+                
+            </div>
+
+            <!-- Contact Form Section -->
+            <div class="contact-form">
+                <h3>Contact Me</h3>
+                <form action="submit_contact.php" method="post">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                    
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                    
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p>Connect with me</p>
+            <div class="social-icons">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/link-removebg-preview.png" alt="LinkedIn"></a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024  All rights reserved.
+                    <br>
+                    Made with love by Aayush❤️
+                </p>
+            </div>
+        </footer>
+    </div>
+    
+
+    
+<script >
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+const productContainer = document.querySelector('.product-container');
+
+let scrollAmount = 0;
+
+leftArrow.addEventListener('click', function() {
+    scrollAmount -= productContainer.offsetWidth / 6; // Scroll by one product width
+    productContainer.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+});
+
+rightArrow.addEventListener('click', function() {
+    scrollAmount += productContainer.offsetWidth / 6; // Scroll by one product width
+    productContainer.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+});
+
+
+
+
+// JavaScript for the sliding images
+let currentIndex = 0;
+const slides = document.querySelectorAll('.contact-slider .contact-slide');
+
+function showNextSlide() {
+    // Hide the current slide
+    slides[currentIndex].classList.remove('active');
+    // Move to the next slide, or loop back to the first one
+    currentIndex = (currentIndex + 1) % slides.length;
+    // Show the next slide
+    slides[currentIndex].classList.add('active');
+}
+
+// Set interval to change slides every 3 seconds
+setInterval(showNextSlide, 3000);
+
+// Initialize the first slide as visible
+slides[currentIndex].classList.add('active');
+
+
+</script>
+</body>
+</html>
